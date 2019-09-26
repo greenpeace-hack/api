@@ -69,7 +69,7 @@ components:
       type: object
       properties:
         description:
-          description: Text describing the event.
+          description: Text describing the event. From Open Social attributes->body->value
           type: string
         id:
           description: Unique Id self-generated? in control shift this slug
@@ -90,6 +90,12 @@ components:
           type: string
         endDate:
           description: End event date
+          type: string
+        summary:
+          description: Short description about the event
+          type: string
+        url:
+          description: Link to the URL content
           type: string
     Supporter:
       description: Person potentially supporting one or more Events
