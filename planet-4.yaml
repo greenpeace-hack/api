@@ -1,0 +1,55 @@
+---
+openapi: 3.0.2
+info:
+  title: Planet 4 v0.1
+  version: 1.0.0
+  description: Planet 4 API for events, supporters, etc.
+components:
+  schemas:
+    Event:
+      description: Planet 4 event, eventually created from different sources (OS,
+        CS)
+      required:
+      - id
+      type: object
+      properties:
+        description:
+          description: Text describing the event.
+          type: string
+        id:
+          description: Unique Id self-generated?
+          type: string
+        title:
+          description: Title of the Event
+          type: string
+        categories:
+          description: Categories the events falls into
+          type: array
+          items:
+            type: string
+        location:
+          description: Lat,Long,...
+          type: string
+    Supporter:
+      description: Person potentially supporting one or more Events
+      required:
+      - id
+      type: object
+      properties:
+        id:
+          description: ""
+          type: string
+    Enrollment:
+      description: Ties one Supporter with one Event
+      required:
+      - endDate
+      - supporterId
+      type: object
+      properties:
+        endDate:
+          format: date-time
+          description: ""
+          type: string
+        supporterId:
+          description: ""
+          type: string
