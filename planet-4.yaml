@@ -7,6 +7,17 @@ info:
 paths:
   /events:
     get:
+      parameters:
+      - name: startdate
+        description: start event date
+        schema:
+          type: string
+        in: query
+      - name: enddate
+        description: end event date
+        schema:
+          type: string
+        in: query
       responses:
         200:
           description: all events
@@ -73,6 +84,12 @@ components:
             type: string
         location:
           description: Lat,Long,...
+          type: string
+        startDate:
+          description: Start event day
+          type: string
+        endDate:
+          description: End event date
           type: string
     Supporter:
       description: Person potentially supporting one or more Events
